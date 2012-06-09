@@ -7,22 +7,30 @@ gem 'sqlite3'
 # loading/authentication
 gem 'cancan'
 
-# assets
+# to get rails console working
+gem 'rb-readline'
+
 group :assets do
   gem 'sass'
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer', :platform => :ruby
 
   gem 'uglifier', '>= 1.0.3'
 end
 
 group :development, :test do
-  gem 'rspec-rails'
-  gem 'shoulda-matchers'
   gem 'debugger'
+  gem 'rspec-rails'
+  gem 'capybara', :git => 'git://github.com/jnicklas/capybara.git'
+end
+
+group :test do
+  gem 'cucumber'
+  gem 'cucumber-rails', :require => false
+  gem 'rspec'
+  gem 'shoulda-matchers'
+  gem 'database_cleaner'
   gem 'factory_girl'
   gem 'factory_girl_rails'
   gem 'ffaker'
