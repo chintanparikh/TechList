@@ -14,7 +14,7 @@ describe CategoriesController do
 	describe "#show" do
 		it "should include all child sections" do
 			get :show, id: category.id
-			assigns(:sections).should include section
+			assigns(:category).sections.should include section
 		end
 	end
 end

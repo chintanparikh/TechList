@@ -1,2 +1,0 @@
-class SectionController < ApplicationController
-end

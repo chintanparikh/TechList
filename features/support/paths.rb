@@ -11,6 +11,10 @@ module NavigationHelpers
     when /^the home\s?page$/
       '/'
 
+    when /^the section page for "(.*)"$/i
+      section = Section.find_by_name($1)
+      polymorphic_url [section.category, section]
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

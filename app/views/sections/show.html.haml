@@ -1,0 +1,4 @@
+%h2= @section.name
+- @section.listings.each do |listing|
+  %ul
+    %li= link_to listing.name, [@section.category, @section, listing]
