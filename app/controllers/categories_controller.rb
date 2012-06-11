@@ -6,8 +6,4 @@ class CategoriesController < ApplicationController
 	def show
 		@category = Category.find(params[:id])
 	end
-
-	def get_child_sections(id)
-		Category.find(id).sections
-	end
 end
