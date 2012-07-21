@@ -23,6 +23,9 @@ group :development, :test do
   gem 'debugger'
   gem 'rspec-rails'
   gem 'capybara', :git => 'git://github.com/jnicklas/capybara.git'
+  gem 'factory_girl'
+  gem 'factory_girl_rails'
+  gem 'ffaker'
 end
 
 group :test do
@@ -31,9 +34,6 @@ group :test do
   gem 'rspec'
   gem 'shoulda-matchers'
   gem 'database_cleaner'
-  gem 'factory_girl'
-  gem 'factory_girl_rails'
-  gem 'ffaker'
 end
 
 gem 'jquery-rails'

@@ -1,0 +1,21 @@
+<% i = 0 %>
+<div class="span9 categories">
+  <% @categories.each do |category| %>
+    <% if i % 3 == 0 %>
+    <div class="row-fluid">
+    <% end %>
+      <div class="span4">
+        <h2><%= category.name %></h2>
+        <div class="well">
+          <ul>
+            <% category.sections.each do |section| %>
+              <li><%= link_to section.name, [category, section] %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    <% if i % 3 == 2 %>
+    </div>
+    <% end %>
+  <% i = i + 1 %>
+  <% end %>
