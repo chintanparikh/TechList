@@ -6,6 +6,7 @@ gem 'sqlite3'
 
 # loading/authentication
 gem 'cancan'
+gem 'devise'
 
 # to get rails console working
 gem 'rb-readline'
