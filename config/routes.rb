@@ -1,4 +1,6 @@
 TechList::Application.routes.draw do
+  devise_for :users
+
   resources :categories do
     resources :sections do
       resources :listings

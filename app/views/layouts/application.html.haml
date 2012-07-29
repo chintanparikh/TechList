@@ -6,52 +6,9 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    .navbar.navbar-fixed-top
-      .navbar-inner
-        .container-fluid
-          %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          %a.brand{:href => "#"} TechList
-          .btn-group.pull-right
-            %a.btn.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-              %i.icon-user
-              chintanparikh@gatech.edu
-              %span.caret
-            %ul.dropdown-menu
-              %li
-                %a{:href => "#"} My Listings
-              %li
-                %a{:href => "#"} Manage my Account
-              %li.divider
-              %li
-                %a{:href => "#"} Sign Out
-          .nav-collapse
-            %ul.nav
-              %li.active
-                %a{:href => "#"} Home
-              %li
-                %a{:href => "#about"} About
-              %li
-                %a{:href => "#contact"} Contact
-          / /.nav-collapse
+    = render partial: 'shared/navbar', object: current_user
     .container-fluid
       .row-fluid
-        .span3
-          .sidebar-nav
-            %ul.nav.nav-list
-              %li
-                %form.form-search
-                  %input.input-medium.search-query{:type => "text"}
-                    %button.btn{:type => "submit"} Search
-              %li
-                %a{:href => "#"} Post a listing
-              %li
-                %a{:href => "#"} View my listings
-              %li
-                %a{:href => "#"} Manage my account
-          / /.well
-        / /span
+        = render partial: 'shared/sidebar', object: current_user
         = render partial: 'shared/flash', object: flash
         = yield
