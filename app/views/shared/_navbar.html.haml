@@ -10,7 +10,7 @@
         - unless current_user.nil?
           %a.btn.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
             %i.icon-user
-            chintanparikh@gatech.edu
+            = current_user.email
             %span.caret
           %ul.dropdown-menu
             %li
