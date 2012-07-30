@@ -5,7 +5,7 @@ class CreateRoles < ActiveRecord::Migration
       t.timestamps
     end
     change_table :users do |t|
-      t.integer :role_id
+      t.references :role
     end
     add_index :users, :role_id
     add_index :roles, :name
