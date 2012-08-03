@@ -1,6 +1,10 @@
 require 'spec_helper'
 
 describe User do
+  [:email, :password, :password_confirmation, :remember_me].each do |attribute|
+    it { should allow_mass_assignment_of(attribute) }
+  end
+
   let(:admin) { FactoryGirl.create(:admin) }
   let(:user) { FactoryGirl.create(:user) }
 
