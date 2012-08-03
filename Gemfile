@@ -17,6 +17,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'therubyracer', :platform => :ruby
   gem 'formtastic'
+  gem 'formtastic-bootstrap', :git => 'https://github.com/niedfelj/formtastic-bootstrap.git', :branch => 'bootstrap2-rails3-2-formtastic-2-2'
   gem 'uglifier', '>= 1.0.3'
 end
 
