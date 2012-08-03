@@ -1,10 +1,15 @@
 class ListingsController < ApplicationController
-	def index
-		section = Section.find(params[:section_id])
-		redirect_to [section.category, section]			
-	end
+  load_and_authorize_resource only: :new
 
-	def show
-		@listing = Listing.find(params[:id])
-	end
+  def index
+    section = Section.find(params[:section_id])
+    redirect_to [section.category, section]
+  end
+
+  def show
+    @listing = Listing.find(params[:id])
+  end
+
+  def new
+  end
 end
