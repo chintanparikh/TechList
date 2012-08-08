@@ -1,0 +1,14 @@
+.span3
+  .sidebar-nav
+    %ul.nav.nav-list
+      %li
+        %form.form-search
+          %input.input-medium.search-query{:type => "text"}
+            %button.btn{:type => "submit"} Search
+      - unless current_user.nil?
+        %li
+          %a{:href => "#"} Post a listing
+        %li
+          %a{:href => "#"} View my listings
+        %li
+          %a{:href => "#"} Manage my account

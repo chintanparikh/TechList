@@ -1,0 +1,4 @@
+= semantic_form_for [Category.find(params[:category_id]), Section.find(params[:section_id]), @listing] do |f|
+  = f.input :name
+  = f.input :content, as: :text
+  = f.submit

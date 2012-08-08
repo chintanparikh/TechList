@@ -1,0 +1,6 @@
+- unless flash.empty?
+  .span9
+    .row-fluid
+      - flash.each do |key, message|
+        %div{class: "alert alert-#{key}"} 
+          %p= message

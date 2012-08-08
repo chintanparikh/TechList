@@ -32,6 +32,12 @@ TechList::Application.configure do
   # Do not compress assets
   config.assets.compress = false
 
+  # Mailcatcher stuff
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # Allows us to use *_url
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 end
