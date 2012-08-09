@@ -1,6 +1,6 @@
 class ListingsController < ApplicationController
-  load_and_authorize_resource :category
-  load_and_authorize_resource :section, through: :category
+  load_and_authorize_resource :category, only: :new
+  load_and_authorize_resource :section, through: :category, only: :new
   load_and_authorize_resource :listing, through: :section, only: :new
 
   def index

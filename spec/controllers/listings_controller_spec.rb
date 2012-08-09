@@ -6,12 +6,12 @@ describe ListingsController do
   let!(:listing) { FactoryGirl.create(:listing, section: section) }
 
   describe "#index" do
-    subject { get :index, section_id: section.id }
+    subject { get :index, category_id: category.id, section_id: section.id }
     specify { subject.should redirect_to [category, section] }
   end
 
   describe "#show" do
-    subject { get :show, id: listing.id }
+    subject { get :show, category_id: category.id, section_id: section.id, id: listing.id}
     it "should find the target listing" do
       subject
       assigns(:listing).name.should == listing.name
@@ -20,9 +20,9 @@ describe ListingsController do
   end
 
   describe "#new" do
-    subject { get :new }
+    subject { get :new, category_id: category.id, section_id: section.id }
     context "not logged in" do
-      it { should_not be_successful }
+      it_should_behave_like "Unauthorized action"
     end
     context "Logged in as a user" do
       before(:each) { sign_in FactoryGirl.create(:user) }
