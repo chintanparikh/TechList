@@ -5,6 +5,10 @@ describe User do
     it { should allow_mass_assignment_of(attribute) }
   end
 
+  # Associations
+  it { should belong_to(:role) }
+  it { should have_many(:listings) }
+
   let(:admin) { FactoryGirl.create(:admin) }
   let(:user) { FactoryGirl.create(:user) }
 
