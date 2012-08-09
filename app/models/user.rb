@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   belongs_to :role
-
+  has_many :listings
   before_save :default_user_role
 
   Role.enumeration.each do |role_name|
