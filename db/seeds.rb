@@ -7,7 +7,6 @@ require "#{Rails.root}/db/seed_helper.rb"
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 def category_with_sections_and_listings(user_email)
-  message "Categories, Sections, Listings"
   category = FactoryGirl.create(:category)
   if category.persisted?
     success "Category: #{category.to_s} created"
@@ -56,7 +55,7 @@ def users
   message "Users"
   user_role = Role.where(name: 'user').first
   user = User.where(email: 'user@gatech.edu').first
-  unless user.nil?
+  if user.nil?
     user = FactoryGirl.create(:user, email: 'user@gatech.edu', password: 'password' )
     user.role = user_role
     user.confirm!
@@ -71,12 +70,12 @@ def users
 
   admin_role = Role.where(name: 'admin').first
   admin = User.where(email: 'admin@gatech.edu').first
-  unless admin.nil?
+  if admin.nil?
     admin = FactoryGirl.create(:user, email: 'admin@gatech.edu', password: 'password' )
     admin.role = admin_role
     admin.confirm!
     if admin.save
-      success "Admin created successfully with email #{user.email} and password 'password'"
+      success "Admin created successfully with email #{admin.email} and password 'password'"
     else
       failure "Admin failed to create"
     end
@@ -85,7 +84,9 @@ def users
   end
 
 end
+
 roles
 users
-category_with_sections_and_listings('admin@gatech.edu')
+message "Categories, Sections, Listings"
+9.times { category_with_sections_and_listings('admin@gatech.edu') }
 
