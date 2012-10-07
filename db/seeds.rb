@@ -87,5 +87,5 @@ def users
 end
 roles
 users
-categories_with_sections_and_listings('admin@gatech.edu')
+category_with_sections_and_listings('admin@gatech.edu')
 
